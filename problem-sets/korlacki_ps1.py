@@ -59,24 +59,12 @@ plt.figure()
 plt.scatter(df['log1960'][df['edu1960']<=edu25],df['growthrate'][df['edu1960']<=edu25])
 plt.xlabel("log (GDPPC 1960)")
 plt.ylabel("Growth Rate")
-plt.title("Bottom Quartile")
+plt.title("Growth Rate vs log(GDPPC 1960) Separated by 1960 Education Levels")
 
-plt.figure()
 plt.scatter(df['log1960'][(edu25<= df['edu1960']) & (df['edu1960']<=edu50)],df['growthrate'][(edu25<= df['edu1960']) & (df['edu1960']<=edu50)])
-plt.xlabel("log (GDPPC 1960)")
-plt.ylabel("Growth Rate")
-plt.title("Lower Middle Quartile")
-
-plt.figure()
 plt.scatter(df['log1960'][(edu50<= df['edu1960']) & (df['edu1960']<=edu75)],df['growthrate'][(edu50<= df['edu1960']) & (df['edu1960']<=edu75)])
-plt.xlabel("log (GDPPC 1960)")
-plt.ylabel("Growth Rate")
-plt.title("Upper Middle Quartile")
-
-plt.figure()
 plt.scatter(df['log1960'][edu75<= df['edu1960']],df['growthrate'][edu75<= df['edu1960']])
-plt.xlabel("log (GDPPC 1960)")
-plt.ylabel("Growth Rate")
-plt.title("Upper Quartile")
+
+plt.legend({"Bottom Quartile","Bottom Middle Quartile","Upper Middle Quartile","Upper Quartile"})
 
 plt.show()
