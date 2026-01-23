@@ -19,11 +19,11 @@ y = df['cgdpo']/df['pop']
 logy = np.log(y)
 A = y/(k**0.3)
 logA = np.log(A)
+logk = np.log(k)
 
 plt.figure()
-plt.scatter(logy,logA)
+plt.scatter(logy,logA,label='logA')
+plt.scatter(logy,logk,label='logk')
 plt.xlabel("Log(y)")
-plt.ylabel("log(A)")
+plt.legend()
 plt.show()
-
-print(df.head(10))
